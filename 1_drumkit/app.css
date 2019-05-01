@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: darkslateblue;
+  color: white;
+}
+
+.drumkit {
+  min-height: 100vh;
+  padding: 1.25rem .75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.drumkit__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.drumkit__item {
+  padding: .5rem;
+}
+
+.drumkit__button {
+  font-family: 'Share', sans-serif;
+  color: inherit;
+  background: transparent;
+  border: .1875rem solid white;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transform: color 400ms background-color 400ms;
+}
+
+.drumkit__button:hover,
+.drumkit__button:focus {
+  outline: 0;
+  background-color: white;
+  color: darkslateblue;
+}
+
+.drumkit__button::-moz-focus-inner {
+  border: none;
+}
+
+.drumkit__button::before,
+.drumkit__button::after {
+    content: "";
+    position: absolute;
+    opacity: 0;
+    border-radius: 50%;
+    transform: scale(.75);
+    transition: transform 100ms linear, opacity 100ms linear;
+}
+
+.drumkit__button::before {
+    border: .1875rem solid white;
+    width: 135%;
+    height: 135%;
+}
+
+.drumkit__button::after {
+  border: .3125rem solid white;
+  width: 116%;
+  height: 116%;
+}
+
+.drumkit__button.is-active::before,
+.drumkit__button.is-active::after,
+.drumkit__button:active::before,
+.drumkit__button:active::after {
+  opacity: .6;
+  transform: scale(1);
+}
+
+.drumkit__key-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.drumkit__key-desc {
+  font-size: .9375rem;
+}
